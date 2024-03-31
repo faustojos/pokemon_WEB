@@ -1,0 +1,86 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color-scheme: blue;
+  background-image: url('../assets/background-image.jpg'); /* Ruta a tu imagen de fondo */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center; /* Centra la imagen en el fondo */
+}
+.grow-button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 50px; /* Hacer el botón redondeado */
+  background-color: yellow; /* Color de fondo del botón */
+  color: black; /* Color del texto */
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  position: relative; /* Para posicionar el borde de emergencia */
+}
+
+.grow-button::after {
+  content: ''; /* Crear un elemento pseudo-después para el borde de emergencia */
+  position: absolute;
+  top: -4px; /* Posición arriba para el borde de emergencia */
+  left: -4px; /* Posición izquierda para el borde de emergencia */
+  right: -4px; /* Posición derecha para el borde de emergencia */
+  bottom: -4px; /* Posición abajo para el borde de emergencia */
+  border: 4px solid red; /* Color y tamaño del borde de emergencia */
+  border-radius: 360px; /* Hacer el borde de emergencia redondeado */
+  animation: pulse .5s infinite alternate; /* Animación del borde de emergencia */
+}
+
+@keyframes pulse {
+  from {
+      border-color: red; /* Color inicial del borde de emergencia */
+  }
+  to {
+      border-color: blue; /* Color final del borde de emergencia */
+  }
+}
+
+.title {
+  text-align: center;
+  margin-top: 50px; /* Ajusta la distancia superior */
+  font-size: 24px; /* Ajusta el tamaño del texto según sea necesario */
+  color: white; /* Color del texto */
+  background-color: #f44336; /* Color de fondo sólido */
+  padding: 10px; /* Agrega espacio alrededor del texto */
+}
+.pokemon {
+    text-align: center;
+    margin: 10px;
+    display: inline-block;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: yellow; /* Color de fondo sólido */
+  color: black; /* Color del texto */
+}
+.pokemon img {
+    width: 200px;
+    height: auto;
+    transition: transform 0.9s;
+}
+
+.pokemon img.grow {
+    transform: scale(2.9);
+}
+.next-button, .previous-button {
+  font-size: 20px; /* Tamaño de la fuente */
+  padding: 15px 30px; /* Espacio alrededor del texto */
+  border-radius: 50px; /* Radio de borde para hacerlo ovalado */
+  background-color: #f44336; /* Color de fondo del botón */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cursor al pasar sobre el botón */
+  margin: 10px; /* Espacio entre los botones */
+}
+
+.next-button:hover, .previous-button:hover {
+  background-color: #d32f2f; /* Cambiar el color de fondo cuando se pasa el mouse */
+}
